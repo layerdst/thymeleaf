@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>예시</h1>
+    <span th:text="${data}"> html data</span>
+
+    <h1>1. 표준 HTML 주석</h1>
+    <!--
+    <span th:text="${data}"> html data </span>
+    -->
+
+    <h1>2. 타입리프 파서 주석</h1>
+    <!-- /* [[${data}]] */ -->
+
+    <!-- /* -->
+    <span th:text="${data}">html data</span>
+    <!-- /* -->
+
+    <h1>3.  타임리프 프로토 타입 주식 (데이터가 존재할때만 출력, 존재하지 않을시 주석처리)</h1>
+    <!--/*/
+    <span th:text="${data}"> html data </span>
+    /*/-->
+</body>
+</html>

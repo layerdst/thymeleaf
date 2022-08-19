@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 문자는 렌더링에 " "을 해줘야한다. 숫자는 그럴 필요는 없다
+        var username = "[[${user.username}]]";
+        var age = [[${user.age}]];
+
+        //자바스크립트 내추럴
+        var username2 = /*[[${user.username}]]*/ "test username";
+
+        var user = "[[${user}]]"; //toString
+    </script>
+
+
+    <script th:inline="javascript">
+        // 문자는 렌더링에 " "을 해줘야한다. 숫자는 그럴 필요는 없다
+        var username = [[${user.username}]];
+        var age = [[${user.age}]];
+
+        //자바스크립트 내추럴
+        var username2 = /*[[${user.username}]]*/ "test username"; //json 변환
+
+        var user = [[${user}]];
+
+        [# th:each="user, stat : ${users}"]
+        var user[[${stat.count}]] = [[${user}]]
+        [/]
+    </script>
+</body>
+</html>
