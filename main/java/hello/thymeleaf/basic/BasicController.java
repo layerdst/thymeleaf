@@ -143,7 +143,7 @@ public class BasicController {
         model.addAttribute("user", new User("userA", 10));
         addUsers(model);
 
-        return "/basic/javascript";
+        return "basic/javascript";
 
     }
 
